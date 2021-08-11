@@ -16,7 +16,7 @@ contact nsidc@nsidc.org for more information.
 ## Requirements
 
 This package requires:
-* [`netcdf4` python library](https://unidata.github.io/netcdf4-python/)
+* [`netcdf4`](https://unidata.github.io/netcdf4-python/) python library
 * [`nco`](https://github.com/nco/nco)
 
 These requirements are also included in the provided `environment.yml` file,
