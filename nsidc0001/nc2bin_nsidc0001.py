@@ -52,7 +52,7 @@ def extract_raw_binary_files(fn):
         ds = Dataset(fn)
         ds.set_auto_maskandscale(False)  # don't unpack data when reading, use actual array
     except OSError:
-        raise SystemExit(f'ERROR: file is not netCDF: {fn}')
+        raise RuntimeError(f'ERROR: file is not netCDF: {fn}')
 
     # Determine date of date in file
     data_datestring = dt.datetime.strptime(
@@ -84,10 +84,10 @@ def extract_raw_binary_files(fn):
 if __name__ == '__main__':
     try:
         ifn = sys.argv[1]
-        assert os.path.isfile(ifn)
     except IndexError:
-        raise SystemExit('ERROR: No filename (first argument) given.')
-    except AssertionError:
-        raise SystemExit(f'ERROR: File does not exist: {ifn}')
+        raise RuntimeError('ERROR: No filename (first argument) given.')
+
+    if not os.path.isfile(ifn):
+        raise RuntimeError(f'ERROR: File does not exist: {ifn}')
 
     extract_raw_binary_files(ifn)
