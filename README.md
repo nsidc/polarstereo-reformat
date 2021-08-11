@@ -36,11 +36,19 @@ $ conda activate polar_stereo_tools
 
 ### nsidc0001
 
+The `nsidc0001` directory contains two scripts for converting
+[nsidc0001](https://nsidc.org/data/nsidc-0001) netCDF data to binary files, one
+written in `python` and the other as a `bash` shell script.
+
+Both scripts take the path to an NSIDC-0001 netCDF file as an argument and
+produce binary files corresponding to data from each passive microwave channel
+(e.g., `n85h`, `n91v`) contained in the netCDF file.
+
+Both scripts produce outputs in the directory from which the program was invoked.
+
 #### Python script
 
 Requires `netcdf4` python library.
-
-Usage:
 
 
 ```
@@ -51,26 +59,18 @@ $ python nsidc0001/nc2bin_nsidc0001.py /path/to/existing/netcdf/NSIDC0001_TB_PS_
   Wrote: tb_f17_20080101_v6_n91v.bin
 ```
 
-Produces output files to the directory in which the program was invoked from.
-
 #### Bash script
 
 Requires `nco` package.
 
-Usage:
-
 ```
 $ ./nsidc0001/nc2bin_nsidc0001.sh /path/to/existing/netcdf/NSIDC0001_TB_PS_N12.5km_20080101_v6.0.nc
-```
+$ ls -l *.bin
+-rw-rw-r-- 1 <user> <group> 1089536 Aug 11 16:28 tb_f13_20080101_v6_n85h.bin
+-rw-rw-r-- 1 <user> <group> 1089536 Aug 11 16:28 tb_f13_20080101_v6_n85v.bin
+-rw-rw-r-- 1 <user> <group> 1089536 Aug 11 16:28 tb_f17_20080101_v6_n91h.bin
+-rw-rw-r-- 1 <user> <group> 1089536 Aug 11 16:28 tb_f17_20080101_v6_n91v.bin
 
-Produces binary files for each channel in the netcdf file to the directory from
-which the script is run. In the above case,
-
-```
-tb_f13_20080101_v6_n85h.bin
-tb_f13_20080101_v6_n85v.bin
-tb_f17_20080101_v6_n91h.bin
-tb_f17_20080101_v6_n91v.bin
 ```
 
 ## License
