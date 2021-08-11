@@ -85,7 +85,3 @@ See [Code of Conduct](CODE_OF_CONDUCT.md).
 
 This software was developed by the National Snow and Ice Data Center with
 funding from multiple sources.
-
-# Getting started
-
-Script dependencies are enumerated in the environment.yml file.
