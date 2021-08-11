@@ -33,8 +33,6 @@ import numpy as np
 from netCDF4 import Dataset
 
 
-
-
 def get_version_string(fn, default_version=5):
     """Derive the (major) version number to use from the filename"""
     ver_expr = re.findall('v\d{1,1}', fn)[0]
