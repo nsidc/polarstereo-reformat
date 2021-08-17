@@ -40,9 +40,9 @@ The `nsidc0001` directory contains two scripts for converting [DMSP SSM/I-SSMIS 
 NetCDF data to the original binary format from earlier versions. One script is written in `python` and the 
 other as a `bash` shell script.
 
-Both scripts take the path to an netCDF file as an argument and produce
+Both scripts take the path to an NetCDF file as an argument and produce
 binary files corresponding to data from each passive microwave channel
-(e.g., `n85h`, `n91v`) contained in the netCDF file.
+(e.g., `n85h`, `n91v`) contained in the NetCDF file.
 
 Both scripts produce outputs in the directory from which the program was invoked.
 
@@ -83,5 +83,4 @@ See [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Credit
 
-This software was developed by the National Snow and Ice Data Center with
-funding from multiple sources.
+This software was developed by the NASA National Snow and Ice Data Center Distributed Active Archive Center.
