@@ -36,12 +36,12 @@ $ conda activate polar_stereo_tools
 
 ### nsidc0001
 
-The `nsidc0001` directory contains two scripts for converting
-[nsidc0001](https://nsidc.org/data/nsidc-0001) netCDF data to binary files, one
-written in `python` and the other as a `bash` shell script.
+The `nsidc0001` directory contains two scripts for converting [DMSP SSM/I-SSMIS Daily Polar Gridded Brightness Temperatures, Version 6](https://nsidc.org/data/nsidc-0001) 
+NetCDF data to the original binary format from earlier versions. One script is written in `python` and the 
+other as a `bash` shell script.
 
-Both scripts take the path to an NSIDC-0001 netCDF file as an argument and
-produce binary files corresponding to data from each passive microwave channel
+Both scripts take the path to an netCDF file as an argument and produce
+binary files corresponding to data from each passive microwave channel
 (e.g., `n85h`, `n91v`) contained in the netCDF file.
 
 Both scripts produce outputs in the directory from which the program was invoked.
