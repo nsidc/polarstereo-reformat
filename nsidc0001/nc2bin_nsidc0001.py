@@ -24,12 +24,17 @@ usage:
         tb_f11_19911215_v5_n37h.bin
         tb_f11_19911215_v5_n37v.bin
 """
+import datetime as dt
+import os
+import re
+import sys
 
+import numpy as np
+from netCDF4 import Dataset
 
 
 def get_version_string(fn, default_version=5):
     """Derive the (major) version number to use from the filename"""
-    import re
     ver_expr = re.findall('v\d{1,1}', fn)[0]
     if len(ver_expr) == 2:
         return ver_expr
@@ -40,16 +45,12 @@ def get_version_string(fn, default_version=5):
 
 def extract_raw_binary_files(fn):
     """Extract the original (v5) filenames for the raw binary files"""
-    import numpy as np
-    from netCDF4 import Dataset
-    import datetime as dt
-
     # Open netCDF file
     try:
         ds = Dataset(fn)
         ds.set_auto_maskandscale(False)  # don't unpack data when reading, use actual array
     except OSError:
-        raise SystemExit(f'ERROR: file is not netCDF: {fn}')
+        raise TypeError(f'ERROR: file is not netCDF: {fn}')
 
     # Determine date of date in file
     data_datestring = dt.datetime.strptime(
@@ -79,15 +80,12 @@ def extract_raw_binary_files(fn):
 
 
 if __name__ == '__main__':
-    import os
-    import sys
-
     try:
         ifn = sys.argv[1]
-        assert os.path.isfile(ifn)
     except IndexError:
-        raise SystemExit('ERROR: No filename (first argument) given.')
-    except AssertionError:
-        raise SystemExit(f'ERROR: File does not exist: {ifn}')
+        raise RuntimeError('ERROR: No filename (first argument) given.')
+
+    if not os.path.isfile(ifn):
+        raise FileNotFoundError(f'ERROR: File does not exist: {ifn}')
 
     extract_raw_binary_files(ifn)
