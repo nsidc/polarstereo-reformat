@@ -1,4 +1,4 @@
-![NSIDC logo](/images/NSIDC_DAAC_2018_sm.jpg)
+![NSIDC logo](/images/NSIDC_DAAC_2018_smv2.jpg)
 
 # nsidc0001
 
