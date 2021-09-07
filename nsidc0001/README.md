@@ -10,7 +10,7 @@ Scripts for converting DMSP SSM/I-SSMIS Daily Polar Gridded Brightness Temperatu
 bugs, please submit an Issue. If you would like to contribute to this
 repository, you may fork the repository and submit a pull request.
 
-See the [LICENSE](../LICENSE.md) for details on permissions and warranties. Please
+See the [LICENSE](../LICENSE) for details on permissions and warranties. Please
 contact nsidc@nsidc.org for more information.
 
 ## Requirements
@@ -73,7 +73,7 @@ $ ls -l *.bin
 
 ## License
 
-See [LICENSE](../LICENSE.md).
+See [LICENSE](../LICENSE).
 
 ## Code of Conduct
 
