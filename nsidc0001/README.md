@@ -6,7 +6,7 @@ Scripts for converting DMSP SSM/I-SSMIS Daily Polar Gridded Brightness Temperatu
 
 ## Level of Support
 
-<b>This directory is fully supported by NSIDC</b>. If you discover any problems or
+<b>This directory is fully supported by the NSIDC DAAC</b>. If you discover any problems or
 bugs, please submit an Issue. If you would like to contribute to this
 repository, you may fork the repository and submit a pull request.
 
