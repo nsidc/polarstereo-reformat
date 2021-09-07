@@ -15,12 +15,12 @@ contact nsidc@nsidc.org for more information.
 
 ## Requirements
 
-Script requirements are provided in the corresponding directory Readme file.
+Script requirements are provided in the README file within each subdirectory.
 
 
 ## Installation
 
-Script installation instructions are provided in the corresponding directory Readme file.
+Script installation instructions are provided in the README file within each subdirectory.
 
 ## Usage
 
@@ -33,7 +33,7 @@ other as a `bash` shell script.
 
 ## License
 
-See [LICENSE](LICENSE), unless otherwise stated in the corresponding directory Readme file.
+See [LICENSE](LICENSE), unless otherwise stated in the README file with each subdirectory.
 
 ## Code of Conduct
 
@@ -41,4 +41,4 @@ See [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Credit
 
-Refer to the corresponding directory Readme for credit information.
+Credit is provided in the README file within each subdirectory.
