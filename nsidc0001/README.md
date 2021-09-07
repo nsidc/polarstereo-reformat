@@ -1,12 +1,12 @@
-![NSIDC logo](/images/NSIDC_logo_2018_poster-1.png)
+![NSIDC logo](/images/NSIDC_DAAC_2018_sm.jpg)
 
-# Polar Stereographic Reading, Reformatting, and Visualizing
+# nsidc0001
 
-Scripts for working with NSIDC data in polar stereographic projections.
+Scripts for converting DMSP SSM/I-SSMIS Daily Polar Gridded Brightness Temperatures, Version 6 NetCDF data to the original binary format from earlier versions.
 
 ## Level of Support
 
-This repository is fully supported by NSIDC. If you discover any problems or
+<b>This directory is fully supported by NSIDC</b>. If you discover any problems or
 bugs, please submit an Issue. If you would like to contribute to this
 repository, you may fork the repository and submit a pull request.
 
@@ -33,8 +33,6 @@ $ conda activate polar_stereo_tools
 ```
 
 ## Usage
-
-### nsidc0001
 
 The `nsidc0001` directory contains two scripts for converting [DMSP SSM/I-SSMIS Daily Polar Gridded Brightness Temperatures, Version 6](https://nsidc.org/data/nsidc-0001) 
 NetCDF data to the original binary format from earlier versions. One script is written in `python` and the 
