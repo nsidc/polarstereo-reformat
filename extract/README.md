@@ -35,7 +35,63 @@ documentation page for more information on how to install IDL on your system.
 
 ## Usage
 
-TODO
+To use `extract.pro`, start an IDL repl (`idl`):
+
+```
+$ idl
+IDL Version 8.3 (linux x86_64 m64). (c) 2013, Exelis Visual Information Solutions, Inc.
+Installation number: xxx-xxxx.
+Licensed for use by: University of Colorado - Boulder (MAIN)
+
+IDL>
+```
+
+Next, compile `extract.pro` with the `.RUN` command:
+
+```
+$ idl
+IDL> .RUN extract.pro
+% Compiled module: REVERSE_STRING_FIND.
+% Compiled module: GET_SATELLITE.
+% Compiled module: GET_PROCESSING_TYPE.
+% Compiled module: GET_DATES.
+% Compiled module: GET_CHANNEL.
+% Compiled module: GET_HEMISPHERE.
+% Compiled module: GET_DIR.
+% Compiled module: DATE_INCREMENT.
+% Compiled module: GET_TB_FILE_LIST.
+% Compiled module: READ_DATA_FILE.
+% Compiled module: GET_IMAGE_SIZE.
+% Compiled module: EXTRACT.
+```
+
+Finally, use the `EXTRACT` procedure to read data into an array (`data`). The
+user will be prompted to provide information on which files to pull data
+from. Once complete, `data` will be populated with values from files found in
+the user-supplied data directory:
+
+```
+IDL> EXTRACT, data
+Enter start and end dates (yyyymmdd, e.g., 19950610).
+Start Date: 20210101
+End Date: 20210909
+Enter the satellite number (e.g., 8, 11, 13, or 17)
+: 17
+Enter the channel to be extracted
+ 1   2   3   4   5   6   7
+--- --- --- --- --- --- ---
+19V 19H 22V 37V 37H 91V 91H
+Enter position of parameter (1-7)
+: 5
+Enter the hemisphere (1 = northern)
+                     (2 = southern)
+: 1
+Enter the full name of the directory that the Tb files are in.
+(Note: must correctly use upper and lower case letters.)
+: /path/to/data/on/disk/
+IDL> size(data)
+           2         304         448           2      136192
+```
 
 
 ## License
