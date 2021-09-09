@@ -29,16 +29,7 @@ documentation page for more information on how to install IDL on your system.
 
 ## Usage
 
-### extract.pro
-
-IDL program that allows you to open a brightness temperature grid file and read
-it into an array, making it available for further manipulation in IDL or to
-write to hard disc. After the program has read the user-indicated time range, an
-array is returned with a 2-byte integer array of brightness temperatures
-expressed in tenths of a kelvin (0.1 K). For example, a value of 2358 translates
-to 235.8 K.
-
-To use `extract.pro`, start an IDL repl (`idl`):
+First, start an IDL repl (`idl`):
 
 ```
 $ idl
@@ -49,7 +40,8 @@ Licensed for use by: University of Colorado - Boulder (MAIN)
 IDL>
 ```
 
-Next, compile `extract.pro` with the `.RUN` command:
+Next, compile the IDL procedure you wish to use with the `.RUN` command. For
+example, to compile `extract.pro`:
 
 ```
 $ idl
@@ -68,13 +60,23 @@ IDL> .RUN extract.pro
 % Compiled module: EXTRACT.
 ```
 
-Finally, use the `EXTRACT` procedure to read data into an array (`data`). The
-user will be prompted to provide information on which files to pull data
-from. Once complete, `data` will be populated with values from files found in
-the user-supplied data directory:
+### extract.pro
+
+IDL program that allows you to open a brightness temperature grid file and read
+it into an array, making it available for further manipulation in IDL or to
+write to hard disc. After the program has read the user-indicated time range, an
+array is returned with a 2-byte integer array of brightness temperatures
+expressed in tenths of a kelvin (0.1 K). For example, a value of 2358 translates
+to 235.8 K.
+
+Once `extract.pro` has been compiled (see above), run the `EXTRACT` procedure
+and follow the prompts to select and read data from files on disk into an
+array. In the following example, a directory containing a
+[NSIDC-0001](https://nsidc.org/data/nsidc-0001) binary file is loaded into a
+`tb_data` array:
 
 ```
-IDL> EXTRACT, data
+IDL> EXTRACT, tb_data
 Enter start and end dates (yyyymmdd, e.g., 19950610).
 Start Date: 20210101
 End Date: 20210909
@@ -92,13 +94,48 @@ Enter the hemisphere (1 = northern)
 Enter the full name of the directory that the Tb files are in.
 (Note: must correctly use upper and lower case letters.)
 : /path/to/data/on/disk/
-IDL> size(data)
+IDL> size(tb_data)
            2         304         448           2      136192
 ```
 
 ### extract_ice.pro
 
-TODO
+IDL program for extracting sea ice concentrations from Polar Stereographic grid
+files.
+
+Once `extract_ice.pro` has been compiled (see above), run the `EXTRACT_ICE`
+procedure and follow the prompts to select and read data from files on disk into
+an array. In the following example, a directory containing a NASA Team (`nt`)
+binary file from [NSIDC-0051](https://nsidc.org/data/nsidc-0051) is loaded into
+a `conc_data` array:
+
+```
+IDL> EXTRACT_ICE, conc_data
+Enter the processing type (1 = SSM/I)
+                          (2 = ESMR)
+: 1
+Enter the time resolution (1 = daily)
+                          (2 = monthly)
+: 1
+Enter start and end dates (yyyymmdd, e.g., 19950610).
+Start Date: 20200101
+End Date: 20201231
+Enter the hemisphere (1 = northern)
+                     (2 = southern)
+: 2
+Enter the full name of the directory that the sea ice files are in.
+(Note: directory names are case-sensitive.)
+: /path/to/data/on/disk/
+Enter the satellite number (e.g., 7, 8, 11, 13, or 17)
+: 17
+Enter the algorithm (1 = NASATeam)
+                    (2 = Bootstrap)
+: 1
+You selected the NASATeam algorithm
+/path/to/data/on/disk/nt_20201126_f17_v1.1_s.bin
+IDL> n_elements(conc_data)
+      104912
+```
 
 ## License
 
