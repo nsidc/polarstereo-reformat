@@ -1,4 +1,4 @@
-name: polar_stereo_tools
+name: nsidc0001
 channels:
   - conda-forge
   - nodefaults
