@@ -29,7 +29,7 @@ It is reccomended to install the requirements for the included scripts with `con
 
 ```
 $ conda env create -f environment.yml
-$ conda activate polar_stereo_tools
+$ conda activate nsidc0001
 ```
 
 ## Usage
