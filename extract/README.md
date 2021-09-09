@@ -1,14 +1,8 @@
 ![NSIDC logo](../images/NSIDC_DAAC_2018_smv2.jpg)
 
-# extract.pro
+# extract
 
-IDL program that allows you to open a brightness temperature grid file and read
-it into an array, making it available for further manipulation in IDL or to
-write to hard disc. After the program has read the user-indicated time range, an
-array is returned with a 2-byte integer array of brightness temperatures
-expressed in tenths of a kelvin (0.1 K). For example, a value of 2358 translates
-to 235.8 K.
-
+IDL procedures for extracting data from binary files.
 
 ## Level of Support
 
@@ -22,8 +16,8 @@ contact nsidc@nsidc.org for more information.
 
 ## Requirements
 
-`extract.pro` requires the Interactive Data Language (IDL), which requires a
-license to install and use.
+The procedures defined in this directory require the Interactive Data Language
+(IDL), which requires a license to install and use.
 
 
 ## Installation
@@ -34,6 +28,15 @@ documentation page for more information on how to install IDL on your system.
 
 
 ## Usage
+
+### extract.pro
+
+IDL program that allows you to open a brightness temperature grid file and read
+it into an array, making it available for further manipulation in IDL or to
+write to hard disc. After the program has read the user-indicated time range, an
+array is returned with a 2-byte integer array of brightness temperatures
+expressed in tenths of a kelvin (0.1 K). For example, a value of 2358 translates
+to 235.8 K.
 
 To use `extract.pro`, start an IDL repl (`idl`):
 
@@ -93,6 +96,9 @@ IDL> size(data)
            2         304         448           2      136192
 ```
 
+### extract_ice.pro
+
+TODO
 
 ## License
 
