@@ -5,6 +5,11 @@
 IDL program for extracting sea ice concentrations from Polar Stereographic grid
 files.
 
+Supported data products are [0051](https://nsidc.org/data/nsidc-0051),
+[0081](https://nsidc.org/data/nsidc-0081) (note the procedure does not support f18 files),
+[0079](https://nsidc.org/data/nsidc-0079), and
+[0009](https://nsidc.org/data/nsidc-0009).
+
 ## Level of Support
 
 <b>This directory is fully supported by the NSIDC DAAC</b>. If you discover any problems or
