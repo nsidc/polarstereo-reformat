@@ -1147,7 +1147,7 @@ endif
 
 titleStr = INTARR(xsize, titleHgt)
 ERASE
-XYOUTS, 0.,0.,/NORM,SIZ=2.5,COLOR=110,title,CHARTHICK=2
+XYOUTS, 0.,0.,/NORM,SIZ=2.5,COLOR=110,titleStr,CHARTHICK=2
 titleStr = TVRD(0, 0, xsize, titleHgt)
 titleStr[WHERE(titleStr ne 110)] = 255
 ERASE
