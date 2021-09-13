@@ -1,8 +1,9 @@
 ![NSIDC logo](../images/NSIDC_DAAC_2018_smv2.jpg)
 
-# extract
+# extract_ice.pro
 
-IDL procedures for extracting data from binary files.
+IDL program for extracting sea ice concentrations from Polar Stereographic grid
+files.
 
 ## Level of Support
 
@@ -40,74 +41,36 @@ Licensed for use by: University of Colorado - Boulder (MAIN)
 IDL>
 ```
 
-Next, compile the IDL procedure you wish to use with the `.RUN` command. For
-example, to compile `extract.pro`:
+Next, compile `extract_ice.pro` with the `.RUN` command:
 
 ```
 $ idl
-IDL> .RUN extract.pro
-% Compiled module: REVERSE_STRING_FIND.
-% Compiled module: GET_SATELLITE.
+IDL> .RUN extract_ice.pro
 % Compiled module: GET_PROCESSING_TYPE.
+% Compiled module: GET_TIME_RESOLUTION.
 % Compiled module: GET_DATES.
-% Compiled module: GET_CHANNEL.
+% Compiled module: GET_ALGORITHM.
 % Compiled module: GET_HEMISPHERE.
 % Compiled module: GET_DIR.
+% Compiled module: GET_ESMR_THRESHOLD.
+% Compiled module: GET_SATELLITE_NUMBER.
 % Compiled module: DATE_INCREMENT.
-% Compiled module: GET_TB_FILE_LIST.
+% Compiled module: GET_ICE_FILE_LIST.
+% Compiled module: GET_MONTHLY_FILE_LIST.
+% Compiled module: GET_ESMR_FILE_LIST.
+% Compiled module: GET_ESMR_MONTHLY_FILE_LIST.
+% Compiled module: GET_ESMR_MEANS_FILE_LIST.
 % Compiled module: READ_DATA_FILE.
 % Compiled module: GET_IMAGE_SIZE.
-% Compiled module: EXTRACT.
+% Compiled module: EXTRACT_ICE.
 ```
 
-### extract.pro
 
-IDL program that allows you to open a brightness temperature grid file and read
-it into an array, making it available for further manipulation in IDL or to
-write to hard disc. After the program has read the user-indicated time range, an
-array is returned with a 2-byte integer array of brightness temperatures
-expressed in tenths of a kelvin (0.1 K). For example, a value of 2358 translates
-to 235.8 K.
-
-Once `extract.pro` has been compiled (see above), run the `EXTRACT` procedure
-and follow the prompts to select and read data from files on disk into an
-array. In the following example, a directory containing a
-[NSIDC-0001](https://nsidc.org/data/nsidc-0001) binary file is loaded into a
-`tb_data` array:
-
-```
-IDL> EXTRACT, tb_data
-Enter start and end dates (yyyymmdd, e.g., 19950610).
-Start Date: 20210101
-End Date: 20210909
-Enter the satellite number (e.g., 8, 11, 13, or 17)
-: 17
-Enter the channel to be extracted
- 1   2   3   4   5   6   7
---- --- --- --- --- --- ---
-19V 19H 22V 37V 37H 91V 91H
-Enter position of parameter (1-7)
-: 5
-Enter the hemisphere (1 = northern)
-                     (2 = southern)
-: 1
-Enter the full name of the directory that the Tb files are in.
-(Note: must correctly use upper and lower case letters.)
-: /path/to/data/on/disk/
-IDL> size(tb_data)
-           2         304         448           2      136192
-```
-
-### extract_ice.pro
-
-IDL program for extracting sea ice concentrations from Polar Stereographic grid
-files.
-
-Once `extract_ice.pro` has been compiled (see above), run the `EXTRACT_ICE`
-procedure and follow the prompts to select and read data from files on disk into
-an array. In the following example, a directory containing a NASA Team (`nt`)
-binary file from [NSIDC-0051](https://nsidc.org/data/nsidc-0051) is loaded into
-a `conc_data` array:
+Once `extract_ice.pro` has been compiled, run the `EXTRACT_ICE` procedure and
+follow the prompts to select and read data from files on disk into an array. In
+the following example, a directory containing a NASA Team (`nt`) binary file
+from [NSIDC-0051](https://nsidc.org/data/nsidc-0051) is loaded into a
+`conc_data` array:
 
 ```
 IDL> EXTRACT_ICE, conc_data
