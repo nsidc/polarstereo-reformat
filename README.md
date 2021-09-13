@@ -24,12 +24,18 @@ Script installation instructions are provided in the README file within each sub
 
 ## Usage
 
+### extract
+
+The `extract` directory contains an IDL procedure for extracting sea ice
+concentration data from Polar Stereographic grid files.
+
 ### nsidc0001
 
-The `nsidc0001` directory contains two scripts for converting [DMSP SSM/I-SSMIS Daily Polar Gridded Brightness Temperatures, Version 6](https://nsidc.org/data/nsidc-0001) 
-NetCDF data to the original binary format from earlier versions. One script is written in `python` and the 
-other as a `bash` shell script.
-
+The `nsidc0001` directory contains two scripts for converting [DMSP SSM/I-SSMIS
+Daily Polar Gridded Brightness Temperatures, Version
+6](https://nsidc.org/data/nsidc-0001) NetCDF data to the original binary format
+from earlier versions. One script is written in `python` and the other as a
+`bash` shell script.
 
 ## License
 
