@@ -5,10 +5,9 @@
 IDL program for extracting sea ice concentrations from Polar Stereographic grid
 files.
 
-Supported data products are [0051](https://nsidc.org/data/nsidc-0051),
-[0081](https://nsidc.org/data/nsidc-0081) (note the procedure does not support f18 files),
-[0079](https://nsidc.org/data/nsidc-0079), and
-[0009](https://nsidc.org/data/nsidc-0009).
+Supported data products are [Sea Ice Concentrations from Nimbus-7 SMMR and DMSP SSM/I-SSMIS Passive Microwave Data](https://nsidc.org/data/nsidc-0051),
+[Bootstrap Sea Ice Concentrations from Nimbus-7 SMMR and DMSP SSM/I-SSMIS](https://nsidc.org/data/nsidc-0079), and
+[Nimbus-5 ESMR Polar Gridded Sea Ice Concentrations](https://nsidc.org/data/nsidc-0009).
 
 ## Level of Support
 
@@ -29,8 +28,8 @@ The procedures defined in this directory require the Interactive Data Language
 ## Installation
 
 Please see
-[this](https://www.l3harrisgeospatial.com/Support/Self-Help-Tools/Help-Articles/Help-Articles-Detail/ArtMID/10220/ArticleID/23920/Install-and-License-IDL-88)
-documentation page for more information on how to install IDL on your system.
+[this document](https://www.l3harrisgeospatial.com/Support/Self-Help-Tools/Help-Articles/Help-Articles-Detail/ArtMID/10220/ArticleID/23920/Install-and-License-IDL-88)
+for more information on how to install IDL on your system.
 
 
 ## Usage
