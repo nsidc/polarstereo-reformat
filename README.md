@@ -27,7 +27,7 @@ Script installation instructions are provided in the README file within each sub
 ### extract-ice
 
 The `extract-ice` directory contains an IDL procedure for extracting sea ice
-concentration data from Polar Stereographic grid files.
+concentration data for [Sea Ice Concentrations from Nimbus-7 SMMR and DMSP SSM/I-SSMIS Passive Microwave Data](https://nsidc.org/data/NSIDC-0051), [Bootstrap Sea Ice Concentrations from Nimbus-7 SMMR and DMSP SSM/I-SSMIS](https://nsidc.org/data/NSIDC-0079), and [Nimbus-5 ESMR Polar Gridded Sea Ice Concentrations](https://nsidc.org/data/NSIDC-0009). 
 
 ### nsidc0001
 
