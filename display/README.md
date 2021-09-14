@@ -4,7 +4,7 @@
 
 IDL program for creating animations of sea ice concentrations from Polar Stereographic grid files.
 
-Supported data products are [Sea Ice Concentrations from Nimbus-7 SMMR and DMSP SSM/I-SSMIS Passive Microwave Data](https://nsidc.org/data/nsidc-0051), ,
+Supported data products are [Sea Ice Concentrations from Nimbus-7 SMMR and DMSP SSM/I-SSMIS Passive Microwave Data](https://nsidc.org/data/nsidc-0051),
 [Bootstrap Sea Ice Concentrations from Nimbus-7 SMMR and DMSP SSM/I-SSMIS](https://nsidc.org/data/nsidc-0079), and
 [Nimbus-5 ESMR Polar Gridded Sea Ice Concentrations](https://nsidc.org/data/nsidc-0009).
 
