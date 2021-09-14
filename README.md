@@ -24,9 +24,9 @@ Script installation instructions are provided in the README file within each sub
 
 ## Usage
 
-### extract
+### extract-ice
 
-The `extract` directory contains an IDL procedure for extracting sea ice
+The `extract-ice` directory contains an IDL procedure for extracting sea ice
 concentration data from Polar Stereographic grid files.
 
 ### nsidc0001
