@@ -2,12 +2,11 @@
 
 # disp_ssmi_ice_xa.pro
 
-IDL program for creating animations of sea ice concentrations from SSM/I Polar
-Grids.
+IDL program for creating animations of sea ice concentrations from Polar Stereographic grid files.
 
-Supported data products are [NSIDC-0051](https://nsidc.org/data/nsidc-0051), ,
-[NSIDC-0079](https://nsidc.org/data/nsidc-0079), and
-[NSIDC-0009](https://nsidc.org/data/nsidc-0009).
+Supported data products are [Sea Ice Concentrations from Nimbus-7 SMMR and DMSP SSM/I-SSMIS Passive Microwave Data](https://nsidc.org/data/nsidc-0051), ,
+[Bootstrap Sea Ice Concentrations from Nimbus-7 SMMR and DMSP SSM/I-SSMIS](https://nsidc.org/data/nsidc-0079), and
+[Nimbus-5 ESMR Polar Gridded Sea Ice Concentrations](https://nsidc.org/data/nsidc-0009).
 
 ## Level of Support
 
@@ -28,8 +27,8 @@ The procedures defined in this directory require the Interactive Data Language
 ## Installation
 
 Please see
-[this](https://www.l3harrisgeospatial.com/Support/Self-Help-Tools/Help-Articles/Help-Articles-Detail/ArtMID/10220/ArticleID/23920/Install-and-License-IDL-88)
-documentation page for more information on how to install IDL on your system.
+[this documentation](https://www.l3harrisgeospatial.com/Support/Self-Help-Tools/Help-Articles/Help-Articles-Detail/ArtMID/10220/ArticleID/23920/Install-and-License-IDL-88)
+documentation for more information on how to install IDL on your system.
 
 
 ## Usage
