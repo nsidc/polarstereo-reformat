@@ -22,7 +22,13 @@ Script requirements are provided in the README file within each subdirectory.
 
 Script installation instructions are provided in the README file within each subdirectory.
 
+
 ## Usage
+
+### display-ice
+
+The `display-ice` directory contains an IDL procedure for creating animations of
+sea ice concentrations from Polar Stereographic grid files.
 
 ### nsidc0001
 
