@@ -22,12 +22,22 @@ Script requirements are provided in the README file within each subdirectory.
 
 Script installation instructions are provided in the README file within each subdirectory.
 
+
 ## Usage
+
+### display-ice
+
+The `display-ice` directory contains an IDL procedure for creating animations of
+sea ice concentrations from Polar Stereographic grid files.
 
 ### extract-ice
 
 The `extract-ice` directory contains an IDL procedure for extracting sea ice
-concentration data for [Sea Ice Concentrations from Nimbus-7 SMMR and DMSP SSM/I-SSMIS Passive Microwave Data](https://nsidc.org/data/NSIDC-0051), [Bootstrap Sea Ice Concentrations from Nimbus-7 SMMR and DMSP SSM/I-SSMIS](https://nsidc.org/data/NSIDC-0079), and [Nimbus-5 ESMR Polar Gridded Sea Ice Concentrations](https://nsidc.org/data/NSIDC-0009). 
+concentration data for [Sea Ice Concentrations from Nimbus-7 SMMR and DMSP
+SSM/I-SSMIS Passive Microwave Data](https://nsidc.org/data/NSIDC-0051),
+[Bootstrap Sea Ice Concentrations from Nimbus-7 SMMR and DMSP
+SSM/I-SSMIS](https://nsidc.org/data/NSIDC-0079), and [Nimbus-5 ESMR Polar
+Gridded Sea Ice Concentrations](https://nsidc.org/data/NSIDC-0009).
 
 ### nsidc0001
 
