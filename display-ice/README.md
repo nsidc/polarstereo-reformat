@@ -44,7 +44,7 @@ Licensed for use by: University of Colorado - Boulder (MAIN)
 IDL>
 ```
 
-Next, compile `extract_ice.pro` with the `.RUN` command:
+Next, compile `disp_ssmi_ice_xa.pro` with the `.RUN` command:
 
 ```
 IDL> .RUN disp_ssmi_ice_xa.pro
