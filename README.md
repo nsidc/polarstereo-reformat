@@ -30,12 +30,22 @@ Script installation instructions are provided in the README file within each sub
 The `display-ice` directory contains an IDL procedure for creating animations of
 sea ice concentrations from Polar Stereographic grid files.
 
+### extract-ice
+
+The `extract-ice` directory contains an IDL procedure for extracting sea ice
+concentration data for [Sea Ice Concentrations from Nimbus-7 SMMR and DMSP
+SSM/I-SSMIS Passive Microwave Data](https://nsidc.org/data/NSIDC-0051),
+[Bootstrap Sea Ice Concentrations from Nimbus-7 SMMR and DMSP
+SSM/I-SSMIS](https://nsidc.org/data/NSIDC-0079), and [Nimbus-5 ESMR Polar
+Gridded Sea Ice Concentrations](https://nsidc.org/data/NSIDC-0009).
+
 ### nsidc0001
 
-The `nsidc0001` directory contains two scripts for converting [DMSP SSM/I-SSMIS Daily Polar Gridded Brightness Temperatures, Version 6](https://nsidc.org/data/nsidc-0001) 
-NetCDF data to the original binary format from earlier versions. One script is written in `python` and the 
-other as a `bash` shell script.
-
+The `nsidc0001` directory contains two scripts for converting [DMSP SSM/I-SSMIS
+Daily Polar Gridded Brightness Temperatures, Version
+6](https://nsidc.org/data/nsidc-0001) NetCDF data to the original binary format
+from earlier versions. One script is written in `python` and the other as a
+`bash` shell script.
 
 ## License
 
