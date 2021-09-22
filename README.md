@@ -1,8 +1,8 @@
 ![NSIDC logo](/images/NSIDC_logo_2018_poster-1.png)
 
-# Polar Stereographic Reading, Reformatting, and Visualizing
+# Polar Stereographic Reformatting
 
-Scripts for working with NSIDC data in polar stereographic projections.
+Scripts for reformatting NSIDC data in polar stereographic projections.
 
 ## Level of Support
 
@@ -26,9 +26,11 @@ Script installation instructions are provided in the README file within each sub
 
 ### nsidc0001
 
-The `nsidc0001` directory contains two scripts for converting [DMSP SSM/I-SSMIS Daily Polar Gridded Brightness Temperatures, Version 6](https://nsidc.org/data/nsidc-0001) 
-NetCDF data to the original binary format from earlier versions. One script is written in `python` and the 
-other as a `bash` shell script.
+The `nsidc0001` directory contains two scripts for converting [DMSP SSM/I-SSMIS
+Daily Polar Gridded Brightness Temperatures, Version
+6](https://nsidc.org/data/nsidc-0001) NetCDF data to the original binary format
+from earlier versions. One script is written in `python` and the other as a
+`bash` shell script.
 
 
 ## License
