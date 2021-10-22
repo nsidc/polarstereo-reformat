@@ -1,0 +1,7 @@
+name: nsidc0081
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python ~=3.9
+  - netcdf4 ~=1.5
