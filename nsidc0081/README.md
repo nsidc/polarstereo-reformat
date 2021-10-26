@@ -33,11 +33,11 @@ $ conda activate nsidc0081
 
 ## Usage
 
-The `nsidc0081` directory contains two scripts for converting [Near-Real-Time DMSP SSMIS Daily Polar Gridded Sea Ice Concentrations, Version 2](https://nsidc.org/data/nsidc-0081) 
+The `nsidc0081` directory contains a python script which converts [Near-Real-Time DMSP SSMIS Daily Polar Gridded Sea Ice Concentrations, Version 2](https://nsidc.org/data/nsidc-0081) 
 NetCDF data to the original binary format from earlier versions. The script is written in `python`.
 
 The script takes the path to an NetCDF file as an argument and produces
-binary files corresponding to sea ice concentration estimates from DMSP satellite (e.g., `f16`, `f17`, 'f18') contained in the NetCDF file.
+binary files corresponding to sea ice concentration estimates from DMSP satellite (e.g., `f16`, `f17`, `f18`) contained in the NetCDF file.
 
 The script produces outputs in the directory from which the program was invoked.
 
