@@ -81,7 +81,7 @@ $ ls -l *.bin
 
 ### nsidc0081
 
-The `nsidc0081` directory contains a scripts for converting [Near-Real-Time DMSP
+The `nsidc0081` directory contains a script for converting [Near-Real-Time DMSP
 SSMIS Daily Polar Gridded Sea Ice Concentrations, Version
 2](https://nsidc.org/data/nsidc-0081) NetCDF data to the original binary format
 from earlier versions. The script is written in `python`.
