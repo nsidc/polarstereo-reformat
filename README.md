@@ -16,8 +16,10 @@ contact nsidc@nsidc.org for more information.
 
 ## Requirements
 
-The scripts in this repository require:
+The python scripts in this repository require:
 * [`netcdf4`](https://unidata.github.io/netcdf4-python/) python library
+
+Bash scripts in this repository require:
 * [`nco`](https://github.com/nco/nco)
 
 These requirements are also included in the provided `environment.yml` file,
