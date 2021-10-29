@@ -17,6 +17,7 @@ contact nsidc@nsidc.org for more information.
 ## Requirements
 
 The python scripts in this repository require:
+* [`python`](https://www.python.org/downloads/) >=v3.9,<4.0
 * [`netcdf4`](https://unidata.github.io/netcdf4-python/) python library
 
 Bash scripts in this repository require:
