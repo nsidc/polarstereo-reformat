@@ -33,7 +33,7 @@ It is recommended to install the requirements for the included scripts with `con
 
 ```
 $ conda env create -f environment.yml
-$ conda activate nc2bin
+$ conda activate ps_nc2bin
 ```
 
 ## Usage
