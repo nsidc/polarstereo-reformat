@@ -29,7 +29,7 @@ requirements into a `conda` environment.
 
 ## Installation
 
-It is reccomended to install the requirements for the included scripts with `conda`:
+It is recommended to install the requirements for the included scripts with `conda`:
 
 ```
 $ conda env create -f environment.yml
