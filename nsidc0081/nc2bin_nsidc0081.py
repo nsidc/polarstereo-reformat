@@ -28,6 +28,7 @@ loops to check pre-existing orig/ and these checkfiles/ might be:
 import os
 import re
 import sys
+from pathlib import Path
 
 import numpy as np
 from netCDF4 import Dataset
@@ -86,7 +87,7 @@ if __name__ == '__main__':
         ifn = sys.argv[1]
         assert os.path.isfile(ifn)
     except IndexError:
-        print('Usage: python nc2bin_nsidc0081.py <fn>')
+        print(f'Usage: python {Path(__file__).name} <fn>')
         raise RuntimeError('No filename given')
     except AssertionError:
         print(f'Not a file: {ifn}')
