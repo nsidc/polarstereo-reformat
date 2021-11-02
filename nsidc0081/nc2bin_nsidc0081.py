@@ -1,9 +1,9 @@
 """
-reconstruct_0081.py
+nc2bin_nsidc0081.py
 
 Sample usage:
-    python reconstruct_0081.py NSIDC0081_SEAICE_PS_N25km_20210828_v2.0.nc
-    python reconstruct_0081.py NSIDC0081_SEAICE_PS_S25km_20210828_v2.0.nc
+    python nc2bin_nsidc0081.py NSIDC0081_SEAICE_PS_N25km_20210828_v2.0.nc
+    python nc2bin_nsidc0081.py NSIDC0081_SEAICE_PS_S25km_20210828_v2.0.nc
 
 If the original binary files are placed in subdir orig/ and the output of
 this code is placed in a directory called checkfiles/ then simple bash
