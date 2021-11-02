@@ -62,7 +62,12 @@ def extract_orig_0081(ifn):
     for sat in ('F16', 'F17', 'F18'):
         varname = f'{sat}_ICECON'
 
-        var = ds.variables[varname]
+        try:
+            var = ds.variables[varname]
+        except KeyError:
+            print(f'  No such conc var found: {varname}')
+            continue
+
         vals = np.array(var).astype(np.uint8).flatten()
 
         ofn = os.path.join(
