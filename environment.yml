@@ -1,4 +1,4 @@
-name: nsidc0001
+name: ps_nc2bin
 channels:
   - conda-forge
   - nodefaults
