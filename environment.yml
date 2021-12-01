@@ -1,7 +1,8 @@
-name: nsidc0081
+name: ps_nc2bin
 channels:
   - conda-forge
   - nodefaults
 dependencies:
   - python ~=3.9
   - netcdf4 ~=1.5
+  - nco ~=5.0

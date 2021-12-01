@@ -1,9 +1,9 @@
 """
-reconstruct_0081.py
+nc2bin_nsidc0081.py
 
 Sample usage:
-    python reconstruct_0081.py NSIDC0081_SEAICE_PS_N25km_20210828_v2.0.nc
-    python reconstruct_0081.py NSIDC0081_SEAICE_PS_S25km_20210828_v2.0.nc
+    python nc2bin_nsidc0081.py NSIDC0081_SEAICE_PS_N25km_20210828_v2.0.nc
+    python nc2bin_nsidc0081.py NSIDC0081_SEAICE_PS_S25km_20210828_v2.0.nc
 
 If the original binary files are placed in subdir orig/ and the output of
 this code is placed in a directory called checkfiles/ then simple bash
@@ -28,6 +28,8 @@ loops to check pre-existing orig/ and these checkfiles/ might be:
 import os
 import re
 import sys
+from pathlib import Path
+
 import numpy as np
 from netCDF4 import Dataset
 
@@ -60,7 +62,12 @@ def extract_orig_0081(ifn):
     for sat in ('F16', 'F17', 'F18'):
         varname = f'{sat}_ICECON'
 
-        var = ds.variables[varname]
+        try:
+            var = ds.variables[varname]
+        except KeyError:
+            print(f'  No such conc var found: {varname}')
+            continue
+
         vals = np.array(var).astype(np.uint8).flatten()
 
         ofn = os.path.join(
@@ -85,7 +92,7 @@ if __name__ == '__main__':
         ifn = sys.argv[1]
         assert os.path.isfile(ifn)
     except IndexError:
-        print('Usage: python reconstruct_0081.py <fn>')
+        print(f'Usage: python {Path(__file__).name} <fn>')
         raise RuntimeError('No filename given')
     except AssertionError:
         print(f'Not a file: {ifn}')
