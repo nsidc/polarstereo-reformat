@@ -109,6 +109,30 @@ $ python nc2bin_nsidc0081.py /path/to/existing/netcdf/NSIDC0081_SEAICE_PS_S25km_
   Wrote: ./nt_20211101_f18_nrt_s.bin
 ```
 
+### nsidc0051
+
+The `nsidc0051` directory contains a script for converting [Sea Ice Concentrations from Nimbus-7 SMMR and DMSP SSM/I-SSMIS Passive Microwave Data, Version 2
+](https://nsidc.org/data/nsidc-0051) NetCDF data to the original binary format
+from earlier versions. The script is written in `python`.
+
+The script takes the path to an NetCDF file as an argument and produces binary
+files corresponding to sea ice concentration estimates from the DMSP satellite
+(e.g., `n07`, `f08`, `f11`, `f13`, `f17`) contained in the NetCDF file.
+
+The script produces outputs in the directory from which the program was invoked.
+
+#### Python script
+
+Requires `netcdf4` python library.
+
+
+```
+$ python nc2bin_nsidc0051.py /path/to/existing/netcdf/NSIDC0051_SEAICE_PS_N25km_19900301_v2.0.nc 
+  Wrote: ./nt_19900301_f08_v1.1_n.bin
+$ python nc2bin_nsidc0051.py /path/to/existing/netcdf/NSIDC0051_SEAICE_PS_S25km_20201101_v2.0.nc 
+  Wrote: ./nt_20201101_f17_v1.1_s.bin
+```
+
 ## License
 
 See [LICENSE](LICENSE), unless otherwise stated in the README file with each subdirectory.
