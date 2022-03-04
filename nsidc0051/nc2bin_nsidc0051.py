@@ -32,7 +32,6 @@ loops to check pre-existing orig/ and these checkfiles/ might be:
     done
 """
 
-import os
 import re
 import sys
 from pathlib import Path
@@ -52,6 +51,7 @@ def get_fnver(fn):
 
 
 def get_fndate(fn):
+    # Extract the datestring of the filename: YYYYMMDD or YYYYMM
     try:
         # Attempt to file YYYYMMDD (daily)
         datestr = re.findall(r'\d{7,8}', fn)[0]
@@ -67,6 +67,7 @@ def get_fndate(fn):
 
 
 def extract_orig_0051(ifn, outdir, verstr):
+    # Writes the legacy-format-equivalent output file for each ICECON field
     if 'N25' in ifn:
         hemlet = 'n'
     elif 'S25' in ifn:
@@ -93,15 +94,13 @@ def extract_orig_0051(ifn, outdir, verstr):
 
         vals = np.array(var).astype(np.uint8).flatten()
 
-        ofn = os.path.join(
-            outdir,
+        ofn = Path(outdir) / \
             fn0051_.format(
                 datestr=fndate,
                 sat=sat.lower(),
                 h=hemlet,
                 verstr=verstr,
             )
-        )
 
         hdr = ds.variables[varname].legacy_binary_header
 
@@ -114,15 +113,15 @@ def extract_orig_0051(ifn, outdir, verstr):
 
 
 if __name__ == '__main__':
-    outdir = './extracted_bins'
-    os.makedirs(outdir, exist_ok=True)
+    outdir = Path('./extracted_bins')
+    outdir.mkdir(parents=True, exist_ok=True)
 
     # Filename template
     fn0051_ = 'nt_{datestr}_{sat}_{verstr}_{h}.bin'
 
     try:
-        ifn = sys.argv[1]
-        assert os.path.isfile(ifn)
+        ifn = Path(sys.argv[1])
+        assert ifn.is_file()
     except IndexError:
         print(f'Usage: python {Path(__file__).name} <fn>')
         raise RuntimeError('No filename given')
@@ -131,6 +130,6 @@ if __name__ == '__main__':
         raise RuntimeError('Given filename is not a file')
 
     # Note: The last version of the raw binary 0051 fns was "v1.1"
-    verstr = get_fnver(ifn)
+    verstr = get_fnver(str(ifn))
 
-    extract_orig_0051(ifn, outdir, verstr)
+    extract_orig_0051(str(ifn), outdir, verstr)
