@@ -41,24 +41,32 @@ import numpy as np
 from netCDF4 import Dataset
 
 
-outdir = './'
-os.makedirs(outdir, exist_ok=True)
-verstr = 'v1.1'
+def get_fnver(fn):
+    # Extract the version string from the filename
+    # Assumes filename of the form "..._v?[.?].nc"
+    vstr_loc = fn.find('_v')
+    endstr = fn[vstr_loc:]
+    verstr = endstr.replace('.nc', '')[1:]
 
-fn0051_ = 'nt_{ymd}_{sat}_{verstr}_{h}.bin'
-
-
-def xwm(m='exiting in xwm'):
-    raise SystemExit(m)
+    return verstr
 
 
 def get_fndate(fn):
-    ymd = re.findall(r'\d{7,8}', fn)[0]
+    try:
+        # Attempt to file YYYYMMDD (daily)
+        datestr = re.findall(r'\d{7,8}', fn)[0]
+    except IndexError:
+        # If no daily datestring found, try to find monthly (YYYYMM)
+        try:
+            datestr = re.findall(r'\d{5,6}', fn)[0]
+        except IndexError:
+            raise RuntimeError(
+                f'Unable to find YYYYMMDD or YYYYMM in filename: {fn}')
 
-    return ymd
+    return datestr
 
 
-def extract_orig_0051(ifn):
+def extract_orig_0051(ifn, outdir, verstr):
     if 'N25' in ifn:
         hemlet = 'n'
     elif 'S25' in ifn:
@@ -88,7 +96,7 @@ def extract_orig_0051(ifn):
         ofn = os.path.join(
             outdir,
             fn0051_.format(
-                ymd=fndate,
+                datestr=fndate,
                 sat=sat.lower(),
                 h=hemlet,
                 verstr=verstr,
@@ -106,6 +114,12 @@ def extract_orig_0051(ifn):
 
 
 if __name__ == '__main__':
+    outdir = './extracted_bins'
+    os.makedirs(outdir, exist_ok=True)
+
+    # Filename template
+    fn0051_ = 'nt_{datestr}_{sat}_{verstr}_{h}.bin'
+
     try:
         ifn = sys.argv[1]
         assert os.path.isfile(ifn)
@@ -116,4 +130,7 @@ if __name__ == '__main__':
         print(f'Not a file: {ifn}')
         raise RuntimeError('Given filename is not a file')
 
-    extract_orig_0051(ifn)
+    # Note: The last version of the raw binary 0051 fns was "v1.1"
+    verstr = get_fnver(ifn)
+
+    extract_orig_0051(ifn, outdir, verstr)
