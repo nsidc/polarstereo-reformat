@@ -2,8 +2,7 @@
 
 # Polar Stereographic Reformatting
 
-Scripts for reformatting NSIDC data in polar stereographic projections from
-NetCDF to binary.
+Scripts for reformatting specific NSIDC SMMR-SSM/I-SSMIS data products in polar stereographic projections from NetCDF to binary.
 
 ## Level of Support
 
@@ -30,7 +29,7 @@ requirements into a `conda` environment.
 
 ## Installation
 
-It is recommended to install the requirements for the included scripts with `conda`:
+The requirements for the included scripts can be installed with `conda`:
 
 ```
 $ conda env create -f environment.yml
@@ -39,19 +38,18 @@ $ conda activate ps_nc2bin
 
 ## Usage
 
-### nsidc0001
+### NSIDC Brightness Temperature Data Set (nsidc0001)
 
-The `nsidc0001` directory contains two scripts for converting [DMSP SSM/I-SSMIS
-Daily Polar Gridded Brightness Temperatures, Version
+The `nsidc0001` directory contains Python and Bash scripts for converting
+[DMSP SSM/I-SSMIS Daily Polar Gridded Brightness Temperatures, Version
 6](https://nsidc.org/data/nsidc-0001) NetCDF data to the original binary format
-from earlier versions. One script is written in `python` and the other as a
-`bash` shell script.
+used in earlier versions.
 
-Both scripts take the path to an NetCDF file as an argument and produce
+The scripts take the path to an NetCDF file as an argument and produce
 binary files corresponding to data from each passive microwave channel
 (e.g., `n85h`, `n91v`) contained in the NetCDF file.
 
-Both scripts produce outputs in the directory from which the program was invoked.
+Each script produces outputs in the directory from which the program was invoked.
 
 #### Python script
 
@@ -68,7 +66,7 @@ $ python nsidc0001/nc2bin_nsidc0001.py /path/to/existing/netcdf/NSIDC0001_TB_PS_
 
 #### Bash script
 
-Requires `nco` package.
+Requires the `nco` package.
 
 ```
 $ ./nsidc0001/nc2bin_nsidc0001.sh /path/to/existing/netcdf/NSIDC0001_TB_PS_N12.5km_20080101_v6.0.nc
@@ -77,36 +75,40 @@ $ ls -l *.bin
 -rw-rw-r-- 1 <user> <group> 1089536 Aug 11 16:28 tb_f13_20080101_v6_n85v.bin
 -rw-rw-r-- 1 <user> <group> 1089536 Aug 11 16:28 tb_f17_20080101_v6_n91h.bin
 -rw-rw-r-- 1 <user> <group> 1089536 Aug 11 16:28 tb_f17_20080101_v6_n91v.bin
-
 ```
 
-### nsidc0081
 
-The `nsidc0081` directory contains a script for converting [Near-Real-Time DMSP
+### NSIDC Sea Ice Concentration Data Sets (nsidc0051, nsidc0081)
+
+The nc2bin_siconc.py `python` script converts [Sea Ice Concentrations from Nimbus-7 SMMR and DMSP SSM/I-SSMIS Passive Microwave Data, Verson 2](https://nsidc.org/data/nsidc-0051) and [Near-Real-Time DMSP
 SSMIS Daily Polar Gridded Sea Ice Concentrations, Version
 2](https://nsidc.org/data/nsidc-0081) NetCDF data to the original binary format
-from earlier versions. The script is written in `python`.
+from earlier versions.
 
-The script takes the path to an NetCDF file as an argument and produces binary
+The script takes the path to a NetCDF file as an argument and produces binary
 files corresponding to sea ice concentration estimates from DMSP satellite
 (e.g., `f16`, `f17`, `f18`) contained in the NetCDF file.
 
 The script produces outputs in the directory from which the program was invoked.
 
-#### Python script
+##### Script usage
 
 Requires `netcdf4` python library.
 
-
 ```
-$ python nc2bin_nsidc0081.py /path/to/existing/netcdf/NSIDC0081_SEAICE_PS_N25km_20211101_v2.0.nc 
+$ python nc2bin_siconc.py /path/to/existing/netcdf/NSIDC0081_SEAICE_PS_N25km_20211101_v2.0.nc 
   Wrote: ./nt_20211101_f16_nrt_n.bin
   Wrote: ./nt_20211101_f17_nrt_n.bin
   Wrote: ./nt_20211101_f18_nrt_n.bin
-$ python nc2bin_nsidc0081.py /path/to/existing/netcdf/NSIDC0081_SEAICE_PS_S25km_20211101_v2.0.nc 
+$ python nc2bin_siconc.py /path/to/existing/netcdf/NSIDC0081_SEAICE_PS_S25km_20211101_v2.0.nc 
   Wrote: ./nt_20211101_f16_nrt_s.bin
   Wrote: ./nt_20211101_f17_nrt_s.bin
   Wrote: ./nt_20211101_f18_nrt_s.bin
+
+$ python nc2bin_siconc.py /path/to/existing/netcdf/NSIDC0051_SEAICE_PS_N25km_19900301_v2.0.nc 
+  Wrote: ./nt_19900301_f08_v1.1_n.bin
+$ python nc2bin_siconc.py /path/to/existing/netcdf/NSIDC0051_SEAICE_PS_S25km_20201101_v2.0.nc 
+  Wrote: ./nt_20201101_f17_v1.1_s.bin
 ```
 
 ## License
