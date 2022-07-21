@@ -1,26 +1,26 @@
 """
-nc2bin_nsidc_conc.py
+nc2bin_siconc.py
 
 Converts NSIDC sea ice concentration fields from netCDF files -- currently
   NSIDC-0051 and NSIDC-0081 -- to their legacy-equivalent raw binary file
   names
 
 Sample usage:
-    python nc2bin_conc.py NSIDC0051_SEAICE_PS_N25km_20210828_v2.0.nc
-    python nc2bin_conc.py NSIDC0051_SEAICE_PS_S25km_20210828_v2.0.nc
+    python nc2bin_siconc.py NSIDC0051_SEAICE_PS_N25km_20210828_v2.0.nc
+    python nc2bin_siconc.py NSIDC0051_SEAICE_PS_S25km_20210828_v2.0.nc
 
-    python nc2bin_conc.py NSIDC0081_SEAICE_PS_N25km_20210828_v2.0.nc
-    python nc2bin_conc.py NSIDC0081_SEAICE_PS_S25km_20210828_v2.0.nc
+    python nc2bin_siconc.py NSIDC0081_SEAICE_PS_N25km_20210828_v2.0.nc
+    python nc2bin_siconc.py NSIDC0081_SEAICE_PS_S25km_20210828_v2.0.nc
 
-    python nc2bin_conc.py NSIDC0051_SEAICE_PS_N25km_202108_v2.0.nc
-    python nc2bin_conc.py NSIDC0051_SEAICE_PS_S25km_202108_v2.0.nc
+    python nc2bin_siconc.py NSIDC0051_SEAICE_PS_N25km_202108_v2.0.nc
+    python nc2bin_siconc.py NSIDC0051_SEAICE_PS_S25km_202108_v2.0.nc
 
-    python nc2bin_conc.py NSIDC0081_SEAICE_PS_N25km_202108_v2.0.nc
-    python nc2bin_conc.py NSIDC0081_SEAICE_PS_S25km_202108_v2.0.nc
+    python nc2bin_siconc.py NSIDC0081_SEAICE_PS_N25km_202108_v2.0.nc
+    python nc2bin_siconc.py NSIDC0081_SEAICE_PS_S25km_202108_v2.0.nc
 
 Input files can be:
     0051 or 0081
-    daily or monthly
+    daily or monthly  (note: there are no monthly 0081 files)
     NH or SH
 """
 
@@ -114,7 +114,7 @@ def get_legacy_fn_template(prodid):
     return fn_template
 
 
-def extract_legacy_conc(ifn, outdir):
+def extract_legacy_siconc(ifn, outdir):
     # Writes the legacy-format-equivalent output file for each ICECON field
     
     prod_id = get_prodid(ifn)
@@ -169,11 +169,12 @@ if __name__ == '__main__':
         print(f'Not a file: {ifn}')
         raise RuntimeError('Given filename is not a file')
 
-    # Filename template
-    # fn0051_ = 'nt_{datestr}_{sat}_{verstr}_{h}.bin'
-
+    outdir = Path('./')
+    """
+    # Code which can be used to write outputs to a different directory
     outdir = Path('./extracted_bins')
     outdir.mkdir(parents=True, exist_ok=True)
     print(f'Writing extracted output to directory: {outdir}')
+    """
 
-    extract_legacy_conc(str(ifn), outdir)
+    extract_legacy_siconc(str(ifn), outdir)
