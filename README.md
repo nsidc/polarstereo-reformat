@@ -111,6 +111,62 @@ $ python nc2bin_siconc.py /path/to/existing/netcdf/NSIDC0051_SEAICE_PS_S25km_202
   Wrote: ./nt_20201101_f17_v1.1_s.bin
 ```
 
+### NSIDC Brightness Temperature Data Sets(nsidc0001, nsidc0080)
+
+The nc2bin_tb.py `python` script converts
+[DMSP SSM/I-SSMIS Daily Polar Gridded Brightness Temperatures, Version 6](https://nsidc.org/data/nsidc-0001)
+and
+[Near-Real-Time DMSP SSM/I-SSMIS Daily Polar Gridded Brightness Temperatures, Version 2](https://nsidc.org/data/nsidc-0080/versions/2)
+NetCDF data to the original binary format used in previous versions of these data sets.
+
+The script takes the path to a NetCDF file as an argument and produces binary
+files corresponding to sea ice concentration estimates from DMSP satellite
+(e.g., `f16`, `f17`, and/or `f18`) contained in the NetCDF file.
+
+The script produces outputs in a directory specified as an optional second
+command line argument or in the default location of `./extracted_bins/`.
+
+##### Script usage
+
+Requires `netcdf4` python library.
+
+```
+$ python nc2bin_tb.py /path/to/existing/netcdf/NSIDC0080_TB_PS_N12.5km_20220130_v2.0.nc ./tb0080dir_20220130
+  Wrote: tb0080dir_20220130/tb_f16_20220130_nrt_n91h.bin
+  Wrote: tb0080dir_20220130/tb_f16_20220130_nrt_n91v.bin
+  Wrote: tb0080dir_20220130/tb_f17_20220130_nrt_n91h.bin
+  Wrote: tb0080dir_20220130/tb_f17_20220130_nrt_n91v.bin
+  Wrote: tb0080dir_20220130/tb_f18_20220130_nrt_n91h.bin
+  Wrote: tb0080dir_20220130/tb_f18_20220130_nrt_n91v.bin
+$ python nc2bin_tb.py /path/to/existing/netcdf/NSIDC0080_TB_PS_S25km_20220130_v2.0.nc
+  Wrote: extracted_bins/tb_f16_20220130_nrt_s19h.bin
+  Wrote: extracted_bins/tb_f16_20220130_nrt_s19v.bin
+  Wrote: extracted_bins/tb_f16_20220130_nrt_s22v.bin
+  Wrote: extracted_bins/tb_f16_20220130_nrt_s37h.bin
+  Wrote: extracted_bins/tb_f16_20220130_nrt_s37v.bin
+  Wrote: extracted_bins/tb_f17_20220130_nrt_s19h.bin
+  Wrote: extracted_bins/tb_f17_20220130_nrt_s19v.bin
+  Wrote: extracted_bins/tb_f17_20220130_nrt_s22v.bin
+  Wrote: extracted_bins/tb_f17_20220130_nrt_s37h.bin
+  Wrote: extracted_bins/tb_f17_20220130_nrt_s37v.bin
+  Wrote: extracted_bins/tb_f18_20220130_nrt_s19h.bin
+  Wrote: extracted_bins/tb_f18_20220130_nrt_s19v.bin
+  Wrote: extracted_bins/tb_f18_20220130_nrt_s22v.bin
+  Wrote: extracted_bins/tb_f18_20220130_nrt_s37h.bin
+  Wrote: extracted_bins/tb_f18_20220130_nrt_s37v.bin
+$ python nc2bin_tb.py /path/to/existing/netcdf/NSIDC0001_TB_PS_N25km_20220202_v6.0.nc
+  Wrote: extracted_bins/tb_f17_20220202_v6.0_n19h.bin
+  Wrote: extracted_bins/tb_f17_20220202_v6.0_n19v.bin
+  Wrote: extracted_bins/tb_f17_20220202_v6.0_n22v.bin
+  Wrote: extracted_bins/tb_f17_20220202_v6.0_n37h.bin
+  Wrote: extracted_bins/tb_f17_20220202_v6.0_n37v.bin
+  Wrote: extracted_bins/tb_f18_20220202_v6.0_n19h.bin
+  Wrote: extracted_bins/tb_f18_20220202_v6.0_n19v.bin
+  Wrote: extracted_bins/tb_f18_20220202_v6.0_n22v.bin
+  Wrote: extracted_bins/tb_f18_20220202_v6.0_n37h.bin
+  Wrote: extracted_bins/tb_f18_20220202_v6.0_n37v.bin
+```
+
 ## License
 
 See [LICENSE](LICENSE), unless otherwise stated in the README file with each subdirectory.

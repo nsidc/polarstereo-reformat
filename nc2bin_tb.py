@@ -1,11 +1,13 @@
 """
-nc2bin_nsidc_tb.py
+nc2bin_tb.py
 
 From a NSIDC brightness temperature netCDF file -- eg NSIDC0001 or
 NSIDC-0080 -- extract the tb fields and output in legacy format
 
 Sample usage:
-    python nc2bin_nsidc_tb.py <nc_filename>
+    python nc2bin_tb.py <nc_filename> [<output_directory>]
+  eg
+    python nc2bin_tb.py NSIDC0080_TB_PS_N25km_20220130_v2.0.nc ./tb0080_20220130
 
 """
 import datetime as dt
@@ -60,7 +62,8 @@ def extract_raw_binary_files(fn, outdir):
     # Open netCDF file
     try:
         ds = Dataset(fn)
-        ds.set_auto_maskandscale(False)  # don't unpack data when reading, use actual array
+        # Don't unpack data when reading, instead use values as-stored in file
+        ds.set_auto_maskandscale(False)
     except OSError:
         raise TypeError(f'ERROR: file is not netCDF: {fn}')
 
@@ -102,6 +105,7 @@ def extract_raw_binary_files(fn, outdir):
 
 
 if __name__ == '__main__':
+    default_outdir_name = './extracted_bins'
     try:
         ifn = Path(sys.argv[1])
     except IndexError:
@@ -113,7 +117,7 @@ if __name__ == '__main__':
     try:
         outdir_name = sys.argv[2]
     except IndexError:
-        outdir_name = './extracted_bins'
+        outdir_name = default_outdir_name
     outdir = Path(outdir_name)
     outdir.mkdir(parents=True, exist_ok=True)
 
