@@ -37,7 +37,7 @@ $ conda activate ps_nc2bin
 
 ### NSIDC Brightness Temperature Data Sets (nsidc0001 and nsidc0080)
 
-The nc2bin_tb.py `python` script converts [DMSP SSM/I-SSMIS Daily Polar Gridded Brightness Temperatures, Version 6](https://nsidc.org/data/nsidc-0001) and [Near-Real-Time DMSP SSM/I-SSMIS Daily Polar Gridded Brightness Temperatures, Version 1](https://nsidc.org/data/nsidc-0080) NetCDF data to the original binary format used in earlier versions.
+The nc2bin_tb.py `python` script converts [DMSP SSM/I-SSMIS Daily Polar Gridded Brightness Temperatures, Version 6](https://nsidc.org/data/nsidc-0001) and [Near-Real-Time DMSP SSM/I-SSMIS Daily Polar Gridded Brightness Temperatures, Version 2](https://nsidc.org/data/nsidc-0080) NetCDF data to the original binary format used in earlier versions.
 
 The script takes the path to an NetCDF file as an argument and produces binary files corresponding to data from each passive microwave channel (e.g., `n19h`, `s91v`) contained in the NetCDF file.
 
