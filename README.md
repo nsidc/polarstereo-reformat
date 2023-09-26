@@ -106,12 +106,11 @@ $ python nc2bin_siconc.py /path/to/existing/netcdf/NSIDC0051_SEAICE_PS_N25km_199
   Wrote: ./nt_19900301_f08_v1.1_n.bin
 $ python nc2bin_siconc.py /path/to/existing/netcdf/NSIDC0051_SEAICE_PS_S25km_20201101_v2.0.nc 
   Wrote: ./nt_20201101_f17_v1.1_s.bin
-```
+
 $ python nc2bin_siconc.py /path/to/existing/netcdf/NSIDC0079_SEAICE_PS_N25km_19870501_v4.0.nc 
   Wrote: ./nt_19900301_f08_v1.1_n.bin
 $ python nc2bin_siconc.py /path/to/existing/netcdf/NSIDC0079_SEAICE_PS_S25km_20201101_v2.0.nc 
   Wrote: ./nt_20201101_f17_v1.1_s.bin
-```
 $ python nc2bin_siconc.py /path/to/existing/netcdf/NSIDC0079_SEAICE_PS_N25km_19870301_v4.0.nc
   Wrote: bt_19870301_n07_v4.0_n.bin
 $ python nc2bin_siconc.py /path/to/existing/netcdf/NSIDC0079_SEAICE_PS_N25km_19870401_v4.0.nc
@@ -128,6 +127,7 @@ $ python nc2bin_siconc.py /path/to/existing/netcdf/NSIDC0079_SEAICE_PS_S25km_202
   Wrote: bt_20220701_f17_v4.0_s.bin
 $ python nc2bin_siconc.py /path/to/existing/netcdf/NSIDC0079_SEAICE_PS_S25km_202207_v4.0.nc
   Wrote: bt_202207_f17_v4.0_s.bin
+```
 
 
 
