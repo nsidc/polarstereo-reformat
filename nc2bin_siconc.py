@@ -54,8 +54,11 @@ def get_fnver(prod_id, fn):
     return verstr
 
 
-def get_fndate(fn):
+def get_fndate(fullpath):
     # Extract the datestring of the filename: YYYYMMDD or YYYYMM
+    import os
+
+    fn = os.path.basename(fullpath)
     try:
         # Attempt to file YYYYMMDD (daily)
         datestr = re.findall(r'\d{7,8}', fn)[0]
@@ -64,8 +67,13 @@ def get_fndate(fn):
         try:
             datestr = re.findall(r'\d{5,6}', fn)[0]
         except IndexError:
-            raise RuntimeError(
-                f'Unable to find YYYYMMDD or YYYYMM in filename: {fn}')
+            print('===========================')
+            print('===========================')
+            print('bad filename:')
+            print(fn)
+            print('===========================')
+            print('===========================')
+            datestr = None
 
     return datestr
 
